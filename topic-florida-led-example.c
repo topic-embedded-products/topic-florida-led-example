@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
 	void *mem_map;
 
 	mem_fd = open("/dev/mem", O_RDWR | O_SYNC);
-	if (mem_map == (void *)-1)
+	if (mem_fd == -1)
 		perror("/dev/mem");
 
 	mem_map = mmap(NULL, 4096, PROT_WRITE, MAP_SHARED, mem_fd, GPIO_CONTROLLER_ADDRESS);
